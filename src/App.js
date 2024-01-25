@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useMemos from "./useMemos.jsx";
 import MemoList from "./MemoList.jsx";
-import AddButton from "./AddButton.jsx";
+import AddButton from "./AddButton.js";
 import MemoEditor from "./MemoEditor.jsx";
 
 export default function App() {
