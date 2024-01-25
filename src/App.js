@@ -1,8 +1,8 @@
 import { useState } from "react";
-import useMemos from "./useMemos.jsx";
-import MemoList from "./MemoList.jsx";
+import useMemos from "./useMemos.js";
+import MemoList from "./MemoList.js";
 import AddButton from "./AddButton.js";
-import MemoEditor from "./MemoEditor.jsx";
+import MemoEditor from "./MemoEditor.js";
 
 export default function App() {
   const [memos, setMemos] = useMemos();
