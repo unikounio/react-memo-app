@@ -11,23 +11,11 @@
 $ git clone https://github.com/unikounio/react-memo-app.git
 ```
 
-2. 作成したディレクトリに移動します。
+2. `$ cd react-memo-app`で作成したディレクトリに移動します。
 
-```
-$ cd react-memo-app
-```
+3. `$ npm install`で必要なnpmパッケージをインストールします。
 
-3. 必要なnpmをインストールします。
-
-```
-$ npm install
-```
-
-4. アプリを立ち上げます。
-
-```
-$ npm start
-```
+4. `$ npm start`でアプリを立ち上げます。
 
 5. ブラウザで`localhost:3000`にアクセスすれば準備完了です！
 
