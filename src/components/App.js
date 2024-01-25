@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useMemos from "./useMemos.js";
+import useMemos from "../useMemos.js";
 import MemoList from "./MemoList.js";
 import AddButton from "./AddButton.js";
 import MemoEditor from "./MemoEditor.js";

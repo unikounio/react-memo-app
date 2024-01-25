@@ -5,7 +5,7 @@
 
 ## 準備
 
-1. `git clone`を用いてローカルに複製します。
+1. ローカルに複製します。
 
 ```
 $ git clone https://github.com/unikounio/react-memo-app.git
