@@ -1,10 +1,10 @@
 body {
   margin: 0;
+  padding: 0;
+  background-color: #f5f5fa;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -13,15 +13,106 @@ code {
 }
 
 ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
-  padding-left: 0;
+}
+
+li {
+  margin: 0;
+  padding: 5px;
+  color: blue;
+  text-decoration: underline;
+  max-width: fit-content;
+  cursor: pointer;
+}
+
+li:hover,
+.add-button:hover {
+  color: darkblue;
+}
+
+textarea {
+  border: solid 2px lightgray;
+  font-size: 20px;
+  height: 500px;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  width: 600px;
+  margin: 10px auto;
+  padding: 0;
+  font-size: 20px;
+  align-items: center;
+  border: solid 1px lightgray;
+  box-shadow:
+    0 -5px 5px -5px rgba(0, 0, 0, 0.2),
+    5px 0 5px -5px rgba(0, 0, 0, 0.4),
+    -5px 0 5px -5px rgba(0, 0, 0, 0.4),
+    0 5px 5px -5px rgba(0, 0, 0, 0.6);
+}
+
+.list-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  align-self: flex-start;
 }
 
 .add-button {
   background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  padding: 0px 0px 10px 5px;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
 }
 
-/* TODO: 一覧されるタイトルを青＋下線にする */
-/* TODO: 一覧されるタイトルをホバーすると水色になる */
-/* TODO: EditMemoコンポーネントを左に寄せる */
-/* TODO:  */
+.editor-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-flow: column, nowrap;
+}
+
+.editor-button {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  flex-flow: row, nowrap;
+}
+
+#edit-button {
+  margin: 10px 0px 15px 30px;
+  padding: 0px;
+  width: 200px;
+  font-size: 20px;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+}
+
+#delete-button {
+  margin: 10px 30px 15px 0px;
+  width: 70px;
+  font-size: 20px;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+}
+
+#edit-button:not(:disabled):hover,
+#delete-button:hover {
+  border: solid 3px gray;
+}

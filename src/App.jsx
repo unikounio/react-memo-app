@@ -1,36 +1,40 @@
 import { useState } from "react";
 import useMemos from "./useMemos.jsx";
 import MemoList from "./MemoList.jsx";
-import AddMemo from "./AddMemo.jsx";
-import EditMemo from "./EditMemo.jsx";
+import AddButton from "./AddButton.jsx";
+import MemoEditor from "./MemoEditor.jsx";
 
 export default function App() {
   const [memos, setMemos] = useMemos();
   const [selectedMemoId, setSelectedMemoId] = useState(null);
 
   return (
-    <div className="App">
-      {memos !== null && (
-        <MemoList
-          memos={memos}
-          setMemos={setMemos}
-          setSelectedMemoId={setSelectedMemoId}
-        />
-      )}
+    <div className="app-container">
+      <div className="list-container">
+        {memos !== null && (
+          <MemoList
+            memos={memos}
+            setMemos={setMemos}
+            setSelectedMemoId={setSelectedMemoId}
+          />
+        )}
 
-      <AddMemo
-        memos={memos || []}
-        setMemos={setMemos}
-        setSelectedMemoId={setSelectedMemoId}
-      />
-      {selectedMemoId && (
-        <EditMemo
-          memos={memos}
+        <AddButton
+          memos={memos || []}
           setMemos={setMemos}
-          selectedMemoId={selectedMemoId}
           setSelectedMemoId={setSelectedMemoId}
         />
-      )}
+      </div>
+      <div className="editor-container">
+        {selectedMemoId && (
+          <MemoEditor
+            memos={memos}
+            setMemos={setMemos}
+            selectedMemoId={selectedMemoId}
+            setSelectedMemoId={setSelectedMemoId}
+          />
+        )}
+      </div>
     </div>
   );
 }

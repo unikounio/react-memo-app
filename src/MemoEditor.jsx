@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 //メモの編集・削除を行うコンポーネント
-export default function EditMemo({
+export default function MemoEditor({
   memos,
   setMemos,
   selectedMemoId,
@@ -45,13 +45,20 @@ export default function EditMemo({
 
   return (
     <form onSubmit={handleSubmit}>
-      <textarea value={memoContent} onChange={handleOnChange} />
-      <button type="submit" disabled={!memoContent.trim()}>
-        編集
-      </button>
-      <button type="button" onClick={handleDelete}>
-        削除
-      </button>
+      <textarea
+        cols="40"
+        rows="10"
+        value={memoContent}
+        onChange={handleOnChange}
+      />
+      <div className="editor-button">
+        <button type="submit" id="edit-button" disabled={!memoContent.trim()}>
+          編集
+        </button>
+        <button type="button" id="delete-button" onClick={handleDelete}>
+          削除
+        </button>
+      </div>
     </form>
   );
 }
