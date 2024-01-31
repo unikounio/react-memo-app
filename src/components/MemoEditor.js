@@ -25,13 +25,7 @@ export default function MemoEditor({
 
   const handleDelete = () => {
     const filteredMemos = memos.filter((m) => m.id !== selectedMemoId);
-
-    //ユーザ側からストレージデータを完全に消す手段を提供するために分岐させている
-    if (filteredMemos.length === 0) {
-      setMemos(null);
-    } else {
-      setMemos(filteredMemos);
-    }
+    setMemos(filteredMemos);
     setSelectedMemoId(null);
   };
 
