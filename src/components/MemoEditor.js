@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 //メモの編集を行うコンポーネント
 export default function MemoEditor({
   memos,
@@ -10,41 +8,35 @@ export default function MemoEditor({
   const selectedMemo = memos.find((memo) => memo.id === selectedMemoId);
 
   //注意：memoContentは文字列であり、memosに格納されているオブジェクトのcontent（配列）とは異なる
-  const [memoContent, setMemoContent] = useState(
-    selectedMemo.content.join("\n")
-  );
-  useEffect(() => {
-    setMemoContent(selectedMemo.content.join("\n"));
-  }, [selectedMemo]);
+  const memoContent = selectedMemo.content.join("\n");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const updateMemos = (updatedMemoContent) => {
     const updatedMemos = memos.map((memo) =>
       memo.id === selectedMemoId
-        ? { ...memo, content: memoContent.split("\n") }
+        ? { ...memo, content: updatedMemoContent.split("\n") }
         : memo
     );
     setMemos(updatedMemos);
   };
 
   const handleChange = (e) => {
-    setMemoContent(e.target.value);
+    updateMemos(e.target.value);
   };
 
   const handleDelete = () => {
-    const updatedMemos = memos.filter((m) => m.id !== selectedMemoId);
+    const filteredMemos = memos.filter((m) => m.id !== selectedMemoId);
 
     //ユーザ側からストレージデータを完全に消す手段を提供するために分岐させている
-    if (updatedMemos.length === 0) {
+    if (filteredMemos.length === 0) {
       setMemos(null);
     } else {
-      setMemos(updatedMemos);
+      setMemos(filteredMemos);
     }
     setSelectedMemoId(null);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e) => e.preventDefault()}>
       <textarea
         cols="40"
         rows="10"
