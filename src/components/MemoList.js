@@ -1,6 +1,6 @@
 //memosを一覧表示するコンポーネント
 export default function MemoList({ memos, setSelectedMemoId }) {
-  function handleOnClick(memo) {
+  function handleClick(memo) {
     setSelectedMemoId(memo.id);
   }
 
@@ -8,7 +8,7 @@ export default function MemoList({ memos, setSelectedMemoId }) {
     <ul>
       {memos.map((memo) => {
         return (
-          <li key={memo.id} onClick={() => handleOnClick(memo)}>
+          <li key={memo.id} onClick={() => handleClick(memo)}>
             {memo.content[0]}
           </li>
         );

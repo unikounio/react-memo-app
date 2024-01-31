@@ -11,7 +11,7 @@ export default function MemoEditor({
 
   //注意：memoContentは文字列であり、memosに格納されているオブジェクトのcontent（配列）とは異なる
   const [memoContent, setMemoContent] = useState(
-    selectedMemo.content.join("\n"),
+    selectedMemo.content.join("\n")
   );
   useEffect(() => {
     setMemoContent(selectedMemo.content.join("\n"));
@@ -22,12 +22,12 @@ export default function MemoEditor({
     const updatedMemos = memos.map((memo) =>
       memo.id === selectedMemoId
         ? { ...memo, content: memoContent.split("\n") }
-        : memo,
+        : memo
     );
     setMemos(updatedMemos);
   };
 
-  const handleOnChange = (e) => {
+  const handleChange = (e) => {
     setMemoContent(e.target.value);
   };
 
@@ -49,7 +49,7 @@ export default function MemoEditor({
         cols="40"
         rows="10"
         value={memoContent}
-        onChange={handleOnChange}
+        onChange={handleChange}
       />
       <div className="editor-button">
         <button type="submit" id="edit-button" disabled={!memoContent.trim()}>
