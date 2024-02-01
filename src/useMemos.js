@@ -6,9 +6,7 @@ export default function useMemos() {
   const [memos, setMemos] = useState(initialMemos);
 
   useEffect(() => {
-    memos !== null
-      ? localStorage.setItem("memos", JSON.stringify(memos))
-      : localStorage.removeItem("memos");
+    localStorage.setItem("memos", JSON.stringify(memos));
   }, [memos]);
 
   return [memos, setMemos];

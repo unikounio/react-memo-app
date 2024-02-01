@@ -6,12 +6,12 @@ import MemoEditor from "./MemoEditor.js";
 
 export default function App() {
   const [memos, setMemos] = useMemos();
-  const [selectedMemoId, setSelectedMemoId] = useState(null);
+  const [selectedMemoId, setSelectedMemoId] = useState("");
 
   return (
     <div className="app-container">
       <div className="list-container">
-        {memos !== null && (
+        {memos.length !== 0 && (
           <MemoList
             memos={memos}
             setMemos={setMemos}

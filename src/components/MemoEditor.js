@@ -26,7 +26,7 @@ export default function MemoEditor({
   const handleDelete = () => {
     const filteredMemos = memos.filter((m) => m.id !== selectedMemoId);
     setMemos(filteredMemos);
-    setSelectedMemoId(null);
+    setSelectedMemoId("");
   };
 
   return (
