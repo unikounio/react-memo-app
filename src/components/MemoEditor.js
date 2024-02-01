@@ -38,10 +38,14 @@ export default function MemoEditor({
         onChange={handleChange}
       />
       <div className="editor-button">
-        <button type="submit" id="edit-button" disabled={!memoContent.trim()}>
+        <button
+          type="submit"
+          className="edit-button"
+          disabled={!memoContent.trim()}
+        >
           編集
         </button>
-        <button type="button" id="delete-button" onClick={handleDelete}>
+        <button type="button" className="delete-button" onClick={handleDelete}>
           削除
         </button>
       </div>

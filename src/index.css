@@ -95,7 +95,7 @@ textarea {
   flex-flow: row, nowrap;
 }
 
-#edit-button {
+.edit-button {
   margin: 10px 0px 15px 30px;
   padding: 0px;
   width: 200px;
@@ -104,7 +104,7 @@ textarea {
   border-radius: 10px;
 }
 
-#delete-button {
+.delete-button {
   margin: 10px 30px 15px 0px;
   width: 70px;
   font-size: 20px;
@@ -112,7 +112,7 @@ textarea {
   border-radius: 10px;
 }
 
-#edit-button:not(:disabled):hover,
-#delete-button:hover {
+.edit-button:not(:disabled):hover,
+.delete-button:hover {
   border: solid 3px gray;
 }
