@@ -6,11 +6,9 @@ export default function MemoEditor({
   setMemos,
   selectedMemoId,
   setSelectedMemoId,
+  selectedMemo,
 }) {
   const { isLoggedIn } = useIsLoggedIn();
-  const selectedMemo = memos.find((memo) => memo.id === selectedMemoId);
-
-  //注意：memoContentは文字列であり、memosに格納されているオブジェクトのcontent（配列）とは異なる
   const memoContent = selectedMemo.content.join("\n");
 
   const updateMemos = (updatedMemoContent) => {
@@ -20,20 +18,27 @@ export default function MemoEditor({
         : memo
     );
     setMemos(updatedMemos);
+    return updatedMemos;
   };
 
-  const handleChange = (e) => {
-    return isLoggedIn ? updateMemos(e.target.value) : memoContent;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const updatedMemos = updateMemos(memoContent);
+    localStorage.setItem("memos", JSON.stringify(updatedMemos));
   };
+
+  const handleChange = (e) =>
+    isLoggedIn ? updateMemos(e.target.value) : memoContent;
 
   const handleDelete = () => {
     const filteredMemos = memos.filter((m) => m.id !== selectedMemoId);
     setMemos(filteredMemos);
+    localStorage.setItem("memos", JSON.stringify(filteredMemos));
     setSelectedMemoId("");
   };
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form onSubmit={handleSubmit}>
       <textarea
         cols="40"
         rows="10"

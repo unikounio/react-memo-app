@@ -80,7 +80,7 @@ textarea {
   display: flex;
   justify-content: space-between;
 }
-
+/*TODO: MemoEditorの有無にかかわらず左にあってほしい*/
 .list-container {
   display: flex;
   justify-content: flex-start;
