@@ -1,4 +1,4 @@
-import { useIsLoggedIn } from "../hooks/is-logged-in-hooks.js";
+import { useIsLoggedIn } from "../hooks/isLoggedInHooks.js";
 
 //メモの編集を行うコンポーネント
 export default function MemoEditor({
@@ -9,6 +9,7 @@ export default function MemoEditor({
 }) {
   const { isLoggedIn } = useIsLoggedIn();
   const selectedMemo = memos.find((memo) => memo.id === selectedMemoId);
+
   //注意：memoContentは文字列であり、memosに格納されているオブジェクトのcontent（配列）とは異なる
   const memoContent = selectedMemo.content.join("\n");
 
@@ -41,10 +42,18 @@ export default function MemoEditor({
       />
       {isLoggedIn && (
         <div className="editor-button">
-          <button type="submit" id="edit-button" disabled={!memoContent.trim()}>
+          <button
+            type="submit"
+            className="edit-button"
+            disabled={!memoContent.trim()}
+          >
             編集
           </button>
-          <button type="button" id="delete-button" onClick={handleDelete}>
+          <button
+            type="button"
+            className="delete-button"
+            onClick={handleDelete}
+          >
             削除
           </button>
         </div>

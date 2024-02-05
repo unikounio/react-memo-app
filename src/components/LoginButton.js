@@ -1,10 +1,16 @@
-import { useIsLoggedIn } from "../hooks/is-logged-in-hooks.js";
+import { useIsLoggedIn } from "../hooks/isLoggedInHooks.js";
 
-export default function LoginButton() {
+export default function LoginButton({ setSelectedMemoId }) {
   const { isLoggedIn, toggleLoginStatus } = useIsLoggedIn();
+  const handleClick = () => {
+    toggleLoginStatus();
+    if (!isLoggedIn) {
+      setSelectedMemoId("");
+    }
+  };
 
   return (
-    <button onClick={toggleLoginStatus}>
+    <button className="login-button" onClick={handleClick}>
       {isLoggedIn ? "ログアウト" : "ログイン"}
     </button>
   );

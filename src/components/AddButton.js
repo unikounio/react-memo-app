@@ -1,4 +1,4 @@
-import { useIsLoggedIn } from "../hooks/is-logged-in-hooks.js";
+import { useIsLoggedIn } from "../hooks/isLoggedInHooks.js";
 
 //押すと編集状態に移行する「＋」ボタンのコンポーネント
 export default function AddButton({ memos, setMemos, setSelectedMemoId }) {

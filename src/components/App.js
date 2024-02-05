@@ -4,10 +4,8 @@ import MemoList from "./MemoList.js";
 import AddButton from "./AddButton.js";
 import MemoEditor from "./MemoEditor.js";
 import LoginButton from "./LoginButton.js";
-import { IsLoggedInProvider } from "../hooks/is-logged-in-hooks.js";
+import { IsLoggedInProvider } from "../hooks/isLoggedInHooks.js";
 
-//TODO: 未ログイン時はメモの閲覧以外の機能を不可とする=>ログイン以外のボタンを非表示にする
-//TODO: ログインするとメモの追加・更新・削除ができる=>全ボタンが表示される
 export default function App() {
   const [memos, setMemos] = useMemos();
   const [selectedMemoId, setSelectedMemoId] = useState("");
@@ -16,7 +14,7 @@ export default function App() {
     <div className="app-container">
       <IsLoggedInProvider>
         <div className="login-container">
-          <LoginButton />
+          <LoginButton setSelectedMemoId={setSelectedMemoId} />
         </div>
         <div className="memos-container">
           <div className="list-container">
