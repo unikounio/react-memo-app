@@ -45,7 +45,6 @@ textarea {
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: white;
   width: 600px;
   margin: 10px auto;
@@ -79,8 +78,9 @@ textarea {
 .memos-container {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
 }
-/*TODO: MemoEditorの有無にかかわらず左にあってほしい*/
+
 .list-container {
   display: flex;
   justify-content: flex-start;
