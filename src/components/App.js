@@ -3,7 +3,7 @@ import MemoList from "./MemoList.js";
 import AddButton from "./AddButton.js";
 import MemoEditor from "./MemoEditor.js";
 import LoginButton from "./LoginButton.js";
-import { IsLoggedInProvider } from "../hooks/isLoggedInHooks.js";
+import { IsLoggedInProvider } from "../hooks/useIsLoggedIn.js";
 
 export default function App() {
   const initialMemos = JSON.parse(localStorage.getItem("memos")) || [];

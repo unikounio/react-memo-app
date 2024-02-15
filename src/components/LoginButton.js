@@ -1,4 +1,4 @@
-import { useIsLoggedIn } from "../hooks/isLoggedInHooks.js";
+import { useIsLoggedIn } from "../hooks/useIsLoggedIn.js";
 
 export default function LoginButton({ setMemos, setSelectedMemoId }) {
   const { isLoggedIn, toggleLoginStatus } = useIsLoggedIn();

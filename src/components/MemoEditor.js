@@ -1,4 +1,4 @@
-import { useIsLoggedIn } from "../hooks/isLoggedInHooks.js";
+import { useIsLoggedIn } from "../hooks/useIsLoggedIn.js";
 
 //メモの編集を行うコンポーネント
 export default function MemoEditor({
@@ -15,7 +15,7 @@ export default function MemoEditor({
     const updatedMemos = memos.map((memo) =>
       memo.id === selectedMemoId
         ? { ...memo, content: updatedMemoContent.split("\n") }
-        : memo,
+        : memo
     );
     setMemos(updatedMemos);
     return updatedMemos;
