@@ -10,7 +10,6 @@ export default function App() {
   const [memos, setMemos] = useState(initialMemos);
   const [selectedMemoId, setSelectedMemoId] = useState("");
   const selectedMemo = memos.find((memo) => memo.id === selectedMemoId);
-  //注意：memoContentは文字列であり、memosに格納されているオブジェクトのcontent（配列）とは異なる
 
   return (
     <div className="app-container">

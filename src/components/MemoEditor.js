@@ -1,6 +1,6 @@
 import { useIsLoggedIn } from "../hooks/useIsLoggedIn.js";
 
-//メモの編集を行うコンポーネント
+//NOTE: メモの編集を行うコンポーネント
 export default function MemoEditor({
   memos,
   setMemos,
