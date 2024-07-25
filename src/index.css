@@ -44,19 +44,41 @@ textarea {
 
 .app-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   background-color: white;
   width: 600px;
   margin: 10px auto;
   padding: 0;
   font-size: 20px;
-  align-items: center;
   border: solid 1px lightgray;
   box-shadow:
     0 -5px 5px -5px rgba(0, 0, 0, 0.2),
     5px 0 5px -5px rgba(0, 0, 0, 0.4),
     -5px 0 5px -5px rgba(0, 0, 0, 0.4),
     0 5px 5px -5px rgba(0, 0, 0, 0.6);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.login-button {
+  margin: 10px 30px 15px 0px;
+  width: auto;
+  font-size: 20px;
+  border: solid 2px lightgray;
+  border-radius: 10px;
+}
+
+.memos-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .list-container {
@@ -112,6 +134,7 @@ textarea {
   border-radius: 10px;
 }
 
+.login-button:hover,
 .edit-button:not(:disabled):hover,
 .delete-button:hover {
   border: solid 3px gray;

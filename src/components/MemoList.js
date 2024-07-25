@@ -1,4 +1,4 @@
-//memosを一覧表示するコンポーネント
+//NOTE: memosを一覧表示するコンポーネント
 export default function MemoList({ memos, setSelectedMemoId }) {
   function handleClick(memo) {
     setSelectedMemoId(memo.id);
